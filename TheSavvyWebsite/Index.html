@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Title-->
+    <title> The Savvy App </title>
+    <!--Title icon-->
+    <link rel="shortcut icon" type="image/x-icon" href="Resources/Images/SavvyIcon.png" />
+    <!--External Javascript-->
+    <script src="SavvyScript.js"></script>
+    <!--Reference to JQuery Script-->
+    <script type="text/javascript" src="Script/jquery-1.12.1.js"></script>
+    <!--Embeded JQuery Script-->
+    <script>
+
+        //JQuery Script. Onload Event:
+        $(function () {
+
+            //This function animates the vertical scroll to the desired anchor
+            function scrollToAnchor(aid) {
+                var aTag = $("a[name='" + aid + "']");
+                $('html,body').animate({ scrollTop: aTag.offset().top }, 'slow');
+            }
+
+            //Apply an eventlistener and call the scroll function to the anchors
+            $("#homeLink").click(function () { scrollToAnchor('homeAnchor'); });
+            $("#AboutLink").click(function () { scrollToAnchor('aboutAnchor'); });
+            $("#ContentLink").click(function () { scrollToAnchor('contentAnchor'); });
+            $("#TeamLink").click(function () { scrollToAnchor('teamAnchor'); });
+            $("#ContactLink").click(function () { scrollToAnchor('contactAnchor'); });
+        });
+        $(document).ready(function () {
+            $(window).bind('scroll', function () {
+                var navHeight = $(window).height() - 70;
+                if ($(window).scrollTop() > navHeight) {
+                    $('nav').addClass('fixed');
+                }
+                else {
+                    $('nav').removeClass('fixed');
+                }
+            });
+        });
+    </script>
+    <!--External Style-->
+    <style>
+        @import url(SavvyStyles.css);
+    </style>
+</head>
+<body>
+    <section id="screen1">
+        <!-- Home Section-->
+        <a name="homeAnchor"></a>
+        <table style="width: 100%; height: 100%; text-align:center; vertical-align:middle;">
+            <tr>
+                <td>
+                    <p style="font-size:62px;"> The Savvy App</p>
+                    <br />
+                    <p style="font-size:30px; color:#cbcac8;">From classroom to tablet or smart phone - anywhere, anytime. <br /> Learn on the go.</p>
+                </td>
+            </tr>
+        </table>
+        <nav>
+            <ul>
+                <li><a id="homeLink" onmouseover="HomeEnter();" onmouseout="HomeLeave();" style="cursor:pointer;">Home</a></li>
+                <li><a id="AboutLink" onmouseover="AboutEnter();" onmouseout="AboutLeave();" style="cursor:pointer;">About</a></li>
+                <li><a id="ContentLink" onmouseover="ContentEnter();" onmouseout="ContentLeave();" style="cursor:pointer;">Content</a></li>
+                <li><a id="TeamLink" onmouseover="TeamEnter();" onmouseout="TeamLeave();" style="cursor:pointer;">Khan</a></li>
+                <li><a id="ContactLink" onmouseover="ContactEnter();" onmouseout="ContactLeave();" style="cursor:pointer;">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <!-- Navigation Extended-->
+    <div style="background-color:#ffffff; width:100%; height:70px; position:relative; z-index:1;">
+        <div class="NavImageWrapper"><img src="Resources/Images/NavIconHomeDefault.png" style="width:50px;" height="70" id="homeIcon" /></div>
+        <div class="NavImageWrapper"><img src="Resources/Images/NavIconAboutDefault.png" style="width:50px;" height="70" id="AboutIcon" /></div>
+        <div class="NavImageWrapper"><img src="Resources/Images/NavIconContentDefault.png" style="width:50px;" height="70" id="ContentIcon" /></div>
+        <div class="NavImageWrapper"><img src="Resources/Images/KhanAcademyDefault.png" style="width:50px;" height="70" id="TeamIcon" /></div>
+        <div class="NavImageWrapper"><img src="Resources/Images/NavIconContactDefault.png" style="width:50px;" height="70" id="ContactIcon" /></div>
+    </div>
+    <!-- Section Two-->
+    <a name="aboutAnchor"></a>
+    <section id="screen2" style="height:700px; box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2); position:relative; z-index:1;">
+        <!--RightImage-->
+        <div style="float:right; width:50%; text-align:center;">
+            <img src="Resources/Images/SavvyApplicationLogo.png" width="360" height="600" style="padding-top:50px" />
+        </div>
+        <!--Context-->
+        <div style="float:left; width:50%; height:700px; text-align:center; vertical-align:middle;">
+            <table id="wrapper" style="vertical-align:middle; text-align:center; width:100%; height:100%;">
+                <tr>
+                    <td><p style="font-size:62px; color:#757575;"> The Savvy App</p><br /> <p style="color:#757575; font-size:30px;">A free educational app created for tablets and smart phones. <br /> The app contains video tutorials, written content and assessments, which identify where students have "gaps" in their education, and compiles a recommended syllabus specific to each user. </p></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- Section Three-->
+    <a name="contentAnchor"></a>
+    <section id="screen3" style="height:700px;">
+        <!--RightImage-->
+        <div style="float:right; width:50%; text-align:center;">
+            <img src="Resources/Images/TheSavvyContent.png" width="360" height="600" style="padding-top:50px" />
+        </div>
+        <!--Content-->
+        <div style="float:left; width:50%; height:700px; text-align:center; vertical-align:middle;">
+            <table id="wrapper" style="vertical-align:middle; text-align:center; width:100%; height:100%;">
+                <tr>
+                    <td><p style="font-size:62px; color:#757575;"> 900+ Videos, 900+ Examples, <br /> 80+ Assessments</p><br /> <p style="color:#757575; font-size:30px;">The Savvy App contains an abundance of offline learning material, tailored to the South African CAPS syllabus. Covering all integral concepts in both Mathematics and Physical Science from grades: 10 - 12, including prerequisites incase a fundamental concept was forgotten.</p></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- Section Three Extension-->
+    <section style="height:700px; background-color:#f8f9fb; box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2); position:relative; z-index:1;">
+        <!--RightImage-->
+        <div style="float:right; width:50%; text-align:center;">
+            <img src="Resources/Images/ContentTwoScreenShot.png" width="360" height="600" style="padding-top:50px" />
+        </div>
+        <!--Content-->
+        <div style="float:left; width:50%; height:700px; text-align:center; vertical-align:middle;">
+            <table id="wrapper" style="vertical-align:middle; text-align:left; width:100%; height:100%;">
+                <tr style="text-align:center;">
+                    <td style="padding:0;">
+                        <p style="display:inline-block; font-size:62px; color:#757575;"> Unique features</p>
+                        <br />
+                        <br />
+                        <div style="text-align:left; display:inline-block;">
+                            <img src="Resources/Images/GreenTick.png" width="20" height="20" style="display:inline-block; " /><p style="display:inline-block; font-size:30px; color:#757575;">&nbsp; Never lose your progress by syncing your account.</p>
+                            <br />
+                            <img src="Resources/Images/GreenTick.png" width="20" height="20" style="display:inline-block;" /><p style="display:inline-block; font-size:30px; color:#757575;">&nbsp; Our practice assessments will guide you to the answer.</p>
+                            <br />
+                            <img src="Resources/Images/GreenTick.png" width="20" height="20" style="display:inline-block;" /><p style="display:inline-block; font-size:30px; color:#757575;">&nbsp; Rise to the top of our leaderboards by gaining knowledge.</p>
+                            <br />
+                            <img src="Resources/Images/GreenTick.png" width="20" height="20" style="display:inline-block;" /><p style="display:inline-block; font-size:30px; color:#757575;">&nbsp; You don't need wifi access to watch, learn and assess.</p>
+                            <br />
+                            <img src="Resources/Images/GreenTick.png" width="20" height="20" style="display:inline-block;" /><p style="display:inline-block; font-size:30px; color:#757575;">&nbsp; Learn from a syllabus tailored specificly to your needs.</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!--KhanAcademy-->
+    <a name="teamAnchor"></a>
+    <section style="height:700px; background-color:#ffffff">
+        <!--RightImage-->
+        <div style="float:right; width:50%; text-align:center;">
+            <img src="Resources/Images/SavvyApplicationKhanAc.png" width="360" height="600" style="padding-top:50px" />
+        </div>
+        <!--Context-->
+        <div style="float:left; width:50%; height:700px; text-align:center; vertical-align:middle;">
+            <table id="wrapper" style="vertical-align:middle; text-align:center; width:100%; height:100%;">
+                <tr>
+                    <td><a class="KhanAa" href="https://www.khanacademy.org/"> KhanAcademy</a><br /><br /> <p style="color:#757575; font-size:30px;">'Over 10 million lives have been impacted by Khan Academy, <br /> and they continue to inspire us every day.' <br /> We would like to thank KhanAcademy for all the selfless work they do which made this app feasable, If you don't already know them, be sure to give them a visit.</p></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!--Contact Section-->
+    <a name="contactAnchor"></a>
+    <section style="height:400px; background-image:url(Resources/Images/ContactSectionBackground.png); background-repeat:no-repeat; background-color:#65ddec;">
+        <div style="height:30px; background-color:#f8f9fb; opacity:0.5; box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2); position:relative; z-index:1; "><p style="color:#757575; font-size:25px;"> The Savvy App </p></div>
+        <div style="float:right; width:66.8%; height:370px;">
+            <table style="width: 100%; height: 264px;">
+                <tr>
+                    <td style="width:50%;">
+                        <p style="font-size:45px; color:#ffffff;"> Connect </p>
+                        <br />
+                        <a class="supportNav" href="" style="font-size:25px; color:#ffffff">Google+</a>
+                        <br />
+                        <a class="supportNav" href="#" style=" font-size:25px; color:#ffffff">Twitter</a>
+                        <br />
+                        <a class="supportNav" href="https://www.facebook.com/TheSavvyProject/?fref=ts" style="font-size:25px; color:#ffffff">Facebook</a>
+                    </td>
+                    <td style="width:50%;">
+                        <p style="font-size:45px; color:#ffffff;"> Support </p>
+                        <br />
+                        <a class="supportNav" href="#" style=" font-size:25px; color:#ffffff">Licenses</a>
+                        <br />
+                        <a class="supportNav" href="#" style="font-size:25px; color:#ffffff">Report a bug</a>
+                        <br />
+                        <a class="supportNav" href="#" style="font-size:25px; color:#ffffff">Privacy Policy</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div style="height:60px; background-color:#ecf0f1;">
+        <table style="width:100%; height:100%; color:#757575; text-align:center; vertical-align:middle; font-size:20px; box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2); position:relative; z-index:1; ">
+            <tr>
+                <td style="width:33%"><p>HelloSavvyTeam@gmail.com</p></td>
+                <td style="width:33%">&nbsp;</td>
+                <td style="width:33%"><p>&copy; 2016 The Savvy App</p></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
